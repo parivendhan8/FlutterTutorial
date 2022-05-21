@@ -25,7 +25,7 @@ class _LoginPageState extends State<LoginPage> {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             const SizedBox(height: 50,),
-            Image.network(
+            Image.asset(
               name,
               height: size,
               width: size,
