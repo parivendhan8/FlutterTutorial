@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:untitled/login/login.dart';
+import 'package:untitled/stack/stack_screen.dart';
 import 'package:untitled/text/TextScreen.dart';
 
 
@@ -17,7 +18,7 @@ class MyDemoApp extends StatelessWidget {
       theme: ThemeData(
           primaryColor: Colors.red
       ),
-      home: const LoginPage(),
+      home: const StackScreen(),
     );
   }
 }

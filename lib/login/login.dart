@@ -19,33 +19,35 @@ class _LoginPageState extends State<LoginPage> {
     double size = MediaQuery.of(context).size.width;
     String name = "assets/images/warrantynewimage.png";
 
-    return Scaffold(
-      body: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            const SizedBox(height: 50,),
-            Image.asset(
-              name,
-              height: size,
-              width: size,
-            ),
+    return SafeArea(
+      child: Scaffold(
+        body: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              const SizedBox(height: 50,),
+              Image.asset(
+                name,
+                height: size,
+                width: size,
+              ),
 
-            const Align(
-              alignment: Alignment.centerLeft,
-              child: Padding(
-                padding: EdgeInsets.only(left: 30, top: 15, bottom: 15),
-                child: Text(
-                  'Login',
-                  style: TextStyle(fontSize: 30, fontWeight: FontWeight.w400),
+              const Align(
+                alignment: Alignment.centerLeft,
+                child: Padding(
+                  padding: EdgeInsets.only(left: 30, top: 15, bottom: 15),
+                  child: Text(
+                    'Login',
+                    style: TextStyle(fontSize: 30, fontWeight: FontWeight.w400),
+                  ),
                 ),
               ),
-            ),
-            emailWidget(),
-            passwordWidget(),
-            loginButton(),
-            socialLogin()
-          ],
+              emailWidget(),
+              passwordWidget(),
+              loginButton(),
+              socialLogin()
+            ],
+          ),
         ),
       ),
     );

@@ -14,10 +14,11 @@ class _TextScreenState extends State<TextScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Text('Flutter', style: TextStyle(
+        child: Text('Demo Flutter', style: TextStyle(
             fontSize: 30,
             fontFamily: 'Satisfy',
-            color: Colors.red[800]
+            color: Colors.red[900],
+          fontWeight: FontWeight.w100
         ),),
       ),
     );
