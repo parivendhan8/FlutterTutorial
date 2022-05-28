@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:untitled/list/list_screen.dart';
 import 'package:untitled/login/login.dart';
 import 'package:untitled/stack/stack_screen.dart';
 import 'package:untitled/text/TextScreen.dart';
+
+import 'bottom_navigation/bottom_navigation.dart';
 
 
 void main(){
@@ -18,7 +21,7 @@ class MyDemoApp extends StatelessWidget {
       theme: ThemeData(
           primaryColor: Colors.red
       ),
-      home: const StackScreen(),
+      home: const BottomNavigation(),
     );
   }
 }
