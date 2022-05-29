@@ -32,7 +32,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
           currentIndex: _selectedIndex,
           selectedItemColor: Colors.black,
           onTap: _onItemTapped,
-          elevation: 5,
+          elevation: 10,
           items: const [
 
         BottomNavigationBarItem(
@@ -54,7 +54,6 @@ class _BottomNavigationState extends State<BottomNavigation> {
         ),
 
       ]),
-
     );
   }
 }

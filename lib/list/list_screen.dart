@@ -42,6 +42,7 @@ class _ListScreenState extends State<ListScreen> {
     );
   }
 
+  // Examples
   CachedNetworkImage buildCachedNetworkImage() {
     return CachedNetworkImage(
           imageBuilder: (context, imageProvider) => Padding(
@@ -77,28 +78,38 @@ class _ListScreenState extends State<ListScreen> {
 
   Padding buildCard2() {
     return Padding(
-      padding: EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(8.0),
       child: Card(
-        child: SizedBox(height: 100,child: Row(
-          children: [
-            buildCachedNetworkImage(),
-            Center(child: Text("Hi")),
-          ],
-        )),
+        child: SizedBox(
+            height: 100,
+            child: Row(
+              children: [
+                buildCachedNetworkImage(),
+                Center(child: Text("Hi")),
+              ],
+            )),
         elevation: 8,
         shadowColor: Colors.blue,
-        shape: RoundedRectangleBorder( side: BorderSide(
-          color: Colors.deepPurple[400]!,
-          width: 1.3
-        ),
-            borderRadius: BorderRadius.circular(20),
+        shape: RoundedRectangleBorder(
+          side: BorderSide(color: Colors.deepPurple[400]!, width: 1.3),
+          borderRadius: BorderRadius.circular(20),
         ),
       ),
     );
   }
 
+  CircleAvatar buildCircleAvatar2() => CircleAvatar(
+      radius: 50,
+      child: ClipOval(
+          child: Image.network(
+        _randomImage,
+        width: 60,
+        height: 60,
+        fit: BoxFit.cover,
+      )));
 
-  CircleAvatar buildCircleAvatar2() => CircleAvatar(radius: 30,child: ClipOval(child: Image.network(_randomImage, width: 60, height: 60, fit: BoxFit.cover,)));
-
-  CircleAvatar buildCircleAvatar() => CircleAvatar(backgroundImage: NetworkImage('https://picsum.photos/id/$_randomImage/200/300'), radius: 30,);
+  Widget buildCircleAvatar() => Padding(
+    padding: const EdgeInsets.all(8.0),
+    child: Image.network(_randomImage, height: 100, fit: BoxFit.fill,),
+  );
 }
