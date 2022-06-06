@@ -1,9 +1,7 @@
-
 import 'dart:math';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 
 class ListScreen extends StatefulWidget {
   const ListScreen({Key? key}) : super(key: key);
@@ -13,67 +11,67 @@ class ListScreen extends StatefulWidget {
 }
 
 class _ListScreenState extends State<ListScreen> {
-
   String image = 'https://picsum.photos/id/1/200/300';
 
-  String get _randomImage => 'https://picsum.photos/id/${Random().nextInt(1000)}/200/300';
+  String get _randomImage =>
+      'https://picsum.photos/id/${Random().nextInt(1000)}/200/300';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView.builder(itemBuilder: (context, index) {
-        return GestureDetector(
-          onTap: () {
-            final snackBar = SnackBar(
-              content: Text('Image index is $index'),
-              duration: const Duration(seconds: 5),
-            );
-            Scaffold.of(context).showSnackBar(snackBar);
+      body: GridView.builder(
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
+        itemBuilder: (context, index) {
+          return Container(
+            margin: const EdgeInsets.all(10),
+            height: 100,
+            width: 100,
+            color: Colors.green[100],
+          );
+        },
+        itemCount: 10,
+      ),
+    );
+  }
 
-          },
-          child: Container(
-            child: buildCard2()
-          ),
-        );
+  ListView buildListView() {
+    return ListView.builder(
+      itemBuilder: (context, index) {
+        return Container(child: buildCard2());
       },
       itemCount: 30,
-      ),
-
     );
   }
 
   // Examples
   CachedNetworkImage buildCachedNetworkImage() {
     return CachedNetworkImage(
-          imageBuilder: (context, imageProvider) => Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Container(
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                image: DecorationImage(
-                    image: imageProvider, fit: BoxFit.fill),
-              ),
-              height: 60,
-              width: 60,
-            ),
+      imageBuilder: (context, imageProvider) => Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Container(
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            image: DecorationImage(image: imageProvider, fit: BoxFit.fill),
           ),
-          imageUrl: _randomImage,
-          errorWidget: (context, url, error) => const Icon(Icons.error),
-        );
+          height: 60,
+          width: 60,
+        ),
+      ),
+      imageUrl: _randomImage,
+      errorWidget: (context, url, error) => const Icon(Icons.error),
+    );
   }
 
   Padding buildCard() {
     return Padding(
-          padding: EdgeInsets.all(8.0),
-          child: Card(
-            child: SizedBox(height: 100,child: Center(child: Text("Hi"))),
-            elevation: 8,
-            shadowColor: Colors.blue,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(20)
-            ),
-          ),
-        );
+      padding: EdgeInsets.all(8.0),
+      child: Card(
+        child: SizedBox(height: 100, child: Center(child: Text("Hi"))),
+        elevation: 8,
+        shadowColor: Colors.blue,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+      ),
+    );
   }
 
   Padding buildCard2() {
@@ -89,9 +87,9 @@ class _ListScreenState extends State<ListScreen> {
               ],
             )),
         elevation: 8,
-        shadowColor: Colors.blue,
+        shadowColor: Colors.deepPurple[400],
         shape: RoundedRectangleBorder(
-          side: BorderSide(color: Colors.deepPurple[400]!, width: 1.3),
+          side: BorderSide(color: Colors.deepPurple[400]!, width: 4.3),
           borderRadius: BorderRadius.circular(20),
         ),
       ),
@@ -109,7 +107,11 @@ class _ListScreenState extends State<ListScreen> {
       )));
 
   Widget buildCircleAvatar() => Padding(
-    padding: const EdgeInsets.all(8.0),
-    child: Image.network(_randomImage, height: 100, fit: BoxFit.fill,),
-  );
+        padding: const EdgeInsets.all(8.0),
+        child: Image.network(
+          _randomImage,
+          height: 100,
+          fit: BoxFit.fill,
+        ),
+      );
 }

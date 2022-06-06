@@ -15,6 +15,16 @@ class _LoginPageState extends State<LoginPage> {
   bool isPasswordVisible = false;
 
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+
+    emailController.addListener(() {
+      print(emailController.text.toString());
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     double size = MediaQuery.of(context).size.width;
     String name = "assets/images/warrantynewimage.png";
@@ -148,6 +158,7 @@ class _LoginPageState extends State<LoginPage> {
       width: 70,
       height: 70,
       decoration: BoxDecoration(
+
           borderRadius: BorderRadius.circular(8),
           border: Border.all(color: Colors.grey, width: 1.5)),
       child: Padding(

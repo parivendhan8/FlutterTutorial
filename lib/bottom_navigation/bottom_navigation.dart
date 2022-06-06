@@ -3,6 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:untitled/list/list_screen.dart';
 
+import '../stack/alignment.dart';
+
 class BottomNavigation extends StatefulWidget {
   const BottomNavigation({Key? key}) : super(key: key);
 
@@ -13,7 +15,7 @@ class BottomNavigation extends StatefulWidget {
 class _BottomNavigationState extends State<BottomNavigation> {
   int _selectedIndex = 0;
   final List<Widget> _screens = <Widget>[
-    const Text('Page 1', style: TextStyle(fontSize: 20)),
+    const AlignmentScreen(),
     const Text('Page 2', style: TextStyle(fontSize: 20)),
     const ListScreen(),
   ];
@@ -38,19 +40,16 @@ class _BottomNavigationState extends State<BottomNavigation> {
         BottomNavigationBarItem(
             icon: Icon(Icons.coffee),
             label: 'Page 1',
-            backgroundColor: Colors.green
         ),
 
         BottomNavigationBarItem(
             icon: Icon(Icons.call),
             label: 'Page 2',
-            backgroundColor: Colors.green
         ),
 
         BottomNavigationBarItem(
             icon: Icon(Icons.email),
             label: 'Page 3',
-            backgroundColor: Colors.green
         ),
 
       ]),
