@@ -21,7 +21,7 @@ class MyDemoApp extends StatelessWidget {
       theme: ThemeData(
           primaryColor: Colors.red
       ),
-      home: const StackScreen(),
+      home: const ListScreen(),
     );
   }
 }
