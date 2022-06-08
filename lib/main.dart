@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:untitled/list/list_screen.dart';
 import 'package:untitled/login/login.dart';
 import 'package:untitled/stack/stack_screen.dart';
+import 'package:untitled/survey/survey.dart';
 import 'package:untitled/text/TextScreen.dart';
 
 import 'bottom_navigation/bottom_navigation.dart';
@@ -21,7 +22,7 @@ class MyDemoApp extends StatelessWidget {
       theme: ThemeData(
           primaryColor: Colors.red
       ),
-      home: const ListScreen(),
+      home: const SurveyClass(),
     );
   }
 }

@@ -26,7 +26,7 @@ class _ListScreenState extends State<ListScreen> {
             margin: const EdgeInsets.all(10),
             height: 100,
             width: 100,
-            color: Colors.green[100],
+            color: Colors.white.withOpacity(8.0),
           );
         },
         itemCount: 10,
